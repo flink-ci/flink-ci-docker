@@ -21,6 +21,7 @@ RUN update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/jav
 RUN update-alternatives --set javac /usr/lib/jvm/java-8-openjdk-amd64/bin/javac
 RUN update-alternatives --set jps /usr/lib/jvm/java-8-openjdk-amd64/bin/jps
 RUN update-alternatives --set jstack /usr/lib/jvm/java-8-openjdk-amd64/bin/jstack
+RUN update-alternatives --set javadoc /usr/lib/jvm/java-8-openjdk-amd64/bin/javadoc
 
 ENV JAVA_HOME_8_X64 "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JAVA_HOME_11_X64 "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
