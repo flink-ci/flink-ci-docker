@@ -45,7 +45,7 @@ RUN cd /usr/share/maven/lib/ \
 
 # add commons logging (needed for custom wagon)
 RUN cd /tmp \
-  && wget https://mirror.synyx.de/apache//commons/logging/binaries/commons-logging-1.2-bin.zip \
+  && wget https://dlcdn.apache.org/commons/logging/binaries/commons-logging-1.2-bin.zip \
   && unzip commons-logging-1.2-bin.zip \
   && cp commons-logging-1.2/commons-logging-1.2.jar /usr/share/maven/lib/
 
