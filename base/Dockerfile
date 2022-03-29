@@ -3,8 +3,14 @@ FROM ubuntu:xenial
 # install packages
 RUN set -eux; \
 	apt-get update; apt-get upgrade -y ; \
-	apt-get install -y gosu sudo locales make less git build-essential openjdk-8-jdk curl libapr1 unzip uuid-runtime jq bsdmainutils wget python docker.io psmisc software-properties-common apt-transport-https; \
+	apt-get install -y gosu sudo locales make less build-essential openjdk-8-jdk curl libapr1 unzip uuid-runtime jq bsdmainutils wget python docker.io psmisc software-properties-common apt-transport-https; \
 	rm -rf /var/lib/apt/lists/*;
+
+# Install latest git
+RUN set -eux; \
+  add-apt-repository -y ppa:git-core/ppa; \
+  apt-get update; \
+  apt-get install -y git
 
 # Install Adopt JDK11
 RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - ; \
