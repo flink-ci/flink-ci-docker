@@ -33,6 +33,13 @@ ENV JAVA_HOME_8_X64 "/usr/lib/jvm/java-8-openjdk-amd64"
 ENV JAVA_HOME_11_X64 "/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64"
 ENV JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
 
+# Install go
+RUN mkdir -p /usr/share/go \
+ && curl -fsSL -o /tmp/go.tar.gz https://go.dev/dl/go1.18.1.linux-amd64.tar.gz \
+ && tar -xzf /tmp/go.tar.gz -C /usr/share/go --strip-components=1 \
+ && rm -f /tmp/go.tar.gz \
+ && ln -s /usr/share/go/bin/go /usr/bin/go
+
 # Install maven
 ARG MAVEN_VERSION=3.2.5
 ARG USER_HOME_DIR="/root"
